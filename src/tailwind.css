@@ -25,12 +25,15 @@ body {
 .sticky #navbarCollapse li a {
   @apply text-dark hover:text-primary hover:opacity-100;
 }
+
 #navbarCollapse li .ud-menu-scroll.active {
   @apply opacity-70;
 }
+
 .sticky #navbarCollapse li .ud-menu-scroll.active {
   @apply text-primary opacity-100;
 }
+
 .sticky .loginBtn {
   @apply text-dark hover:text-primary hover:opacity-100;
 }
@@ -42,9 +45,26 @@ body {
 .navbarTogglerActive > span:nth-child(1) {
   @apply top-[7px] rotate-45 transform;
 }
+
 .navbarTogglerActive > span:nth-child(2) {
   @apply opacity-0;
 }
+
 .navbarTogglerActive > span:nth-child(3) {
   @apply top-[-8px] rotate-[135deg];
+}
+
+.dzCXRr {
+  line-height: 1.625 !important;
+  --tw-text-opacity: 1;
+  color: rgb(99 115 129 / var(--tw-text-opacity)) !important;
+}
+
+.fatxhU {
+  --tw-text-opacity: 1;
+  color: rgb(33 43 54 / var(--tw-text-opacity)) !important;
+}
+
+.kzQnoI a:last-child {
+    visibility: hidden !important;
 }
