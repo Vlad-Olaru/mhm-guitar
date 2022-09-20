@@ -177,7 +177,7 @@
     }
 
     let tag = document.createElement("script");
-    tag.src = "../../node_modules/flowbite/dist/flowbite.js"
+    tag.src = "assets/js/flowbite.js"
     document.getElementsByTagName("head")[0].appendChild(tag);
   }
 })();
