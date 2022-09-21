@@ -106,6 +106,7 @@
 
   const request = {
     placeId: 'ChIJW6iKWxz_sUARzEOed2aqGQY',
+    language: 'ro',
     fields: ['reviews']
   }
 
@@ -121,24 +122,26 @@
           review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
           review.setAttribute("data-carousel-item", "active");
         } else {
-          review.setAttribute("data-carousel-item", "");
           review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
+          review.setAttribute("data-carousel-item", "");
         }
 
         let firstDiv = document.createElement("div");
-        firstDiv.setAttribute("class", "ud-single-testimonial wow fadeInUp mb-12 p-8 shadow-testimonial");
+        firstDiv.setAttribute("class", "ud-single-testimonial wow fadeInUp p-8 shadow-testimonial");
+        firstDiv.setAttribute("style", "height: 100%");
 
         let starDiv = document.createElement("div");
         starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center");
+        starDiv.setAttribute("style", "height: 3rem");
         for (let j = 1; j <= reviews[i]['rating']; j++) {
-          let span = document.createElement("span")
-          span.setAttribute("class", "mr-1 text-[#fbb040]")
-          let svg = document.createElement("svg")
+          let span = document.createElement("span");
+          span.setAttribute("class", "mr-1 text-[#fbb040]");
+          let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
           svg.setAttribute("width", "18");
           svg.setAttribute("height", "16");
           svg.setAttribute("viewBox", "0 0 18 16");
           svg.setAttribute("class", "fill-current");
-          let path = document.createElement("path");
+          let path = document.createElementNS("http://www.w3.org/2000/svg", "path");
           path.setAttribute("d", "M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z");
           svg.appendChild(path);
           span.appendChild(svg);
@@ -148,7 +151,7 @@
         let textDiv = document.createElement("div");
         textDiv.setAttribute("class", "ud-testimonial-content mb-6");
         let p = document.createElement("p");
-        p.setAttribute("class", "text-base tracking-wide text-body-color");
+        p.setAttribute("class", "text-base tracking-wide text-white");
         p.textContent = reviews[i]['text'];
         textDiv.appendChild(p);
 
@@ -166,7 +169,8 @@
         author.setAttribute("class", "text-sm font-semibold");
         author.textContent = reviews[i]['author_name'];
         let timeAgo = document.createElement('p');
-        timeAgo.setAttribute("class", "text-sm font-semibold");
+        timeAgo.setAttribute("class", "text-xs");
+        timeAgo.setAttribute("style", "color: #bcbcbc");
         timeAgo.textContent = reviews[i]['relative_time_description'];
         authorDiv.appendChild(author);
         authorDiv.appendChild(timeAgo);
