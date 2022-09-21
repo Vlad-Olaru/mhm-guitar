@@ -54,17 +54,18 @@ body {
   @apply top-[-8px] rotate-[135deg];
 }
 
-.dzCXRr {
-  line-height: 1.625 !important;
-  --tw-text-opacity: 1;
-  color: rgb(99 115 129 / var(--tw-text-opacity)) !important;
+.h-96{
+  height: 24rem;
 }
 
-.fatxhU {
-  --tw-text-opacity: 1;
-  color: rgb(33 43 54 / var(--tw-text-opacity)) !important;
-}
+@media (min-width: 720px) {
+  .md\:w-70-percent{
+    width: 70%;
+  }
 
-.kzQnoI a:last-child {
-    visibility: hidden !important;
+  .md\:py-\[80px\]{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
 }

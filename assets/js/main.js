@@ -131,7 +131,7 @@
         firstDiv.setAttribute("style", "height: 100%; flex-direction: column; justify-content: space-between");
 
         let starDiv = document.createElement("div");
-        starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center");
+        starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center mx-8");
         for (let j = 1; j <= reviews[i]['rating']; j++) {
           let span = document.createElement("span");
           span.setAttribute("class", "mr-1 text-[#fbb040]");
@@ -150,12 +150,12 @@
         let textDiv = document.createElement("div");
         textDiv.setAttribute("class", "ud-testimonial-content");
         let p = document.createElement("p");
-        p.setAttribute("class", "text-base tracking-wide text-white");
+        p.setAttribute("class", "text-base tracking-wide text-white mx-8");
         p.textContent = reviews[i]['text'];
         textDiv.appendChild(p);
 
         let photoDiv = document.createElement('div');
-        photoDiv.setAttribute("class", "ud-testimonial-info flex items-center");
+        photoDiv.setAttribute("class", "ud-testimonial-info flex items-center mx-8");
         let innerPhotoDiv = document.createElement('div');
         innerPhotoDiv.setAttribute("class", "ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full");
         let innerImg = document.createElement('img');

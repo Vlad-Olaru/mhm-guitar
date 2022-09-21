@@ -1375,6 +1375,10 @@ input:checked + .toggle-bg{
   height: 2.25rem;
 }
 
+.h-96{
+  height: 24rem;
+}
+
 .h-4{
   height: 1rem;
 }
@@ -2460,12 +2464,21 @@ body {
     width: 50%;
   }
 
+  .md\:w-70-percent{
+    width: 70%;
+  }
+
   .md\:p-16{
     padding: 4rem;
   }
 
   .md\:p-\[60px\]{
     padding: 60px;
+  }
+
+  .md\:py-\[80px\]{
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .md\:py-\[120px\]{
