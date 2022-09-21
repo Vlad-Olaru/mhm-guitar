@@ -104,80 +104,85 @@
     scrollTo(document.documentElement);
   };
 
-  const http = new XMLHttpRequest()
-  http.open("GET", "https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyBGwP0Ej1voIeR6nWJnu47mbn0YOIlbUtU&place_id=ChIJW6iKWxz_sUARzEOed2aqGQY")
-  http.send();
-  http.onload = () => {
-    const reviews = JSON.parse(http.responseText)["result"]["reviews"]
-
-    let carouselData = document.getElementById('carousel-data');
-    for (let i = 0; i < reviews.length; i++) {
-      let review = document.createElement("div");
-      if (i === 0) {
-        review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
-        review.setAttribute("data-carousel-item", "active");
-      } else {
-        review.setAttribute("data-carousel-item", "");
-        review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
-      }
-
-      let firstDiv = document.createElement("div");
-      firstDiv.setAttribute("class", "ud-single-testimonial wow fadeInUp mb-12 p-8 shadow-testimonial");
-
-      let starDiv = document.createElement("div");
-      starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center");
-      for (let j = 1; j <= reviews[i]['rating']; j++) {
-        let span = document.createElement("span")
-        span.setAttribute("class", "mr-1 text-[#fbb040]")
-        let svg = document.createElement("svg")
-        svg.setAttribute("width", "18");
-        svg.setAttribute("height", "16");
-        svg.setAttribute("viewBox", "0 0 18 16");
-        svg.setAttribute("class", "fill-current");
-        let path = document.createElement("path");
-        path.setAttribute("d", "M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z");
-        svg.appendChild(path);
-        span.appendChild(svg);
-        starDiv.appendChild(span);
-      }
-
-      let textDiv = document.createElement("div");
-      textDiv.setAttribute("class", "ud-testimonial-content mb-6");
-      let p = document.createElement("p");
-      p.setAttribute("class", "text-base tracking-wide text-body-color");
-      p.textContent = reviews[i]['text'];
-      textDiv.appendChild(p);
-
-      let photoDiv = document.createElement('div');
-      photoDiv.setAttribute("class", "ud-testimonial-info flex items-center");
-      let innerPhotoDiv = document.createElement('div');
-      innerPhotoDiv.setAttribute("class", "ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full");
-      let innerImg = document.createElement('img');
-      innerImg.src = reviews[i]['profile_photo_url'];
-      innerImg.alt = "author";
-      innerPhotoDiv.appendChild(innerImg);
-      let authorDiv = document.createElement('div');
-      authorDiv.setAttribute("class", "ud-testimonial-meta");
-      let author = document.createElement('h4');
-      author.setAttribute("class", "text-sm font-semibold");
-      author.textContent = reviews[i]['author_name'];
-      let timeAgo = document.createElement('p');
-      timeAgo.setAttribute("class", "text-sm font-semibold");
-      timeAgo.textContent = reviews[i]['relative_time_description'];
-      authorDiv.appendChild(author);
-      authorDiv.appendChild(timeAgo);
-      photoDiv.appendChild(innerPhotoDiv);
-      photoDiv.appendChild(authorDiv);
-
-      firstDiv.appendChild(starDiv);
-      firstDiv.appendChild(textDiv);
-      firstDiv.appendChild(photoDiv);
-      review.appendChild(firstDiv);
-      carouselData.appendChild(review);
-    }
-
-    let tag = document.createElement("script");
-    tag.src = "assets/js/flowbite.js"
-    document.getElementsByTagName("head")[0].appendChild(tag);
+  const request = {
+    placeId: 'ChIJW6iKWxz_sUARzEOed2aqGQY',
+    fields: ['reviews']
   }
+
+  const service = new google.maps.places.PlacesService(document.createElement("div"));
+  service.getDetails(request, function(result, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      const reviews = result["reviews"]
+
+      let carouselData = document.getElementById('carousel-data');
+      for (let i = 0; i < reviews.length; i++) {
+        let review = document.createElement("div");
+        if (i === 0) {
+          review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
+          review.setAttribute("data-carousel-item", "active");
+        } else {
+          review.setAttribute("data-carousel-item", "");
+          review.setAttribute("class", "duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20");
+        }
+
+        let firstDiv = document.createElement("div");
+        firstDiv.setAttribute("class", "ud-single-testimonial wow fadeInUp mb-12 p-8 shadow-testimonial");
+
+        let starDiv = document.createElement("div");
+        starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center");
+        for (let j = 1; j <= reviews[i]['rating']; j++) {
+          let span = document.createElement("span")
+          span.setAttribute("class", "mr-1 text-[#fbb040]")
+          let svg = document.createElement("svg")
+          svg.setAttribute("width", "18");
+          svg.setAttribute("height", "16");
+          svg.setAttribute("viewBox", "0 0 18 16");
+          svg.setAttribute("class", "fill-current");
+          let path = document.createElement("path");
+          path.setAttribute("d", "M9.09815 0.360596L11.1054 6.06493H17.601L12.3459 9.5904L14.3532 15.2947L9.09815 11.7693L3.84309 15.2947L5.85035 9.5904L0.595291 6.06493H7.0909L9.09815 0.360596Z");
+          svg.appendChild(path);
+          span.appendChild(svg);
+          starDiv.appendChild(span);
+        }
+
+        let textDiv = document.createElement("div");
+        textDiv.setAttribute("class", "ud-testimonial-content mb-6");
+        let p = document.createElement("p");
+        p.setAttribute("class", "text-base tracking-wide text-body-color");
+        p.textContent = reviews[i]['text'];
+        textDiv.appendChild(p);
+
+        let photoDiv = document.createElement('div');
+        photoDiv.setAttribute("class", "ud-testimonial-info flex items-center");
+        let innerPhotoDiv = document.createElement('div');
+        innerPhotoDiv.setAttribute("class", "ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full");
+        let innerImg = document.createElement('img');
+        innerImg.src = reviews[i]['profile_photo_url'];
+        innerImg.alt = "author";
+        innerPhotoDiv.appendChild(innerImg);
+        let authorDiv = document.createElement('div');
+        authorDiv.setAttribute("class", "ud-testimonial-meta");
+        let author = document.createElement('h4');
+        author.setAttribute("class", "text-sm font-semibold");
+        author.textContent = reviews[i]['author_name'];
+        let timeAgo = document.createElement('p');
+        timeAgo.setAttribute("class", "text-sm font-semibold");
+        timeAgo.textContent = reviews[i]['relative_time_description'];
+        authorDiv.appendChild(author);
+        authorDiv.appendChild(timeAgo);
+        photoDiv.appendChild(innerPhotoDiv);
+        photoDiv.appendChild(authorDiv);
+
+        firstDiv.appendChild(starDiv);
+        firstDiv.appendChild(textDiv);
+        firstDiv.appendChild(photoDiv);
+        review.appendChild(firstDiv);
+        carouselData.appendChild(review);
+      }
+
+      let tag = document.createElement("script");
+      tag.src = "assets/js/flowbite.js"
+      document.getElementsByTagName("head")[0].appendChild(tag);
+    }
+  });
 })();
