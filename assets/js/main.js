@@ -127,12 +127,11 @@
         }
 
         let firstDiv = document.createElement("div");
-        firstDiv.setAttribute("class", "ud-single-testimonial wow fadeInUp p-8 shadow-testimonial");
-        firstDiv.setAttribute("style", "height: 100%");
+        firstDiv.setAttribute("class", "ud-single-testimonial flex wow fadeInUp p-8 shadow-testimonial");
+        firstDiv.setAttribute("style", "height: 100%; flex-direction: column; justify-content: space-between");
 
         let starDiv = document.createElement("div");
         starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center");
-        starDiv.setAttribute("style", "height: 3rem");
         for (let j = 1; j <= reviews[i]['rating']; j++) {
           let span = document.createElement("span");
           span.setAttribute("class", "mr-1 text-[#fbb040]");
@@ -149,7 +148,7 @@
         }
 
         let textDiv = document.createElement("div");
-        textDiv.setAttribute("class", "ud-testimonial-content mb-6");
+        textDiv.setAttribute("class", "ud-testimonial-content");
         let p = document.createElement("p");
         p.setAttribute("class", "text-base tracking-wide text-white");
         p.textContent = reviews[i]['text'];
