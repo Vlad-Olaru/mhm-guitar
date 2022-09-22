@@ -151,6 +151,7 @@
         textDiv.setAttribute("class", "ud-testimonial-content");
         let p = document.createElement("p");
         p.setAttribute("class", "text-base tracking-wide text-white mx-8");
+        p.setAttribute("style", "display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow:hidden;");
         p.textContent = reviews[i]['text'];
         textDiv.appendChild(p);
 
