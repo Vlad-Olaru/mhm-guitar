@@ -190,7 +190,7 @@
       }
 
       let tag = document.createElement("script");
-      tag.src = "assets/js/flowbite.js"
+      tag.src = "assets/js/flowbite.min.js"
       document.getElementsByTagName("head")[0].appendChild(tag);
     }
   });
