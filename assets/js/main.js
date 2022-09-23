@@ -107,15 +107,20 @@
   const request = {
     placeId: 'ChIJW6iKWxz_sUARzEOed2aqGQY',
     language: 'ro',
-    fields: ['reviews']
+    fields: ['rating', 'reviews', 'user_ratings_total']
   }
 
   const service = new google.maps.places.PlacesService(document.createElement("div"));
   service.getDetails(request, function(result, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      const reviews = result["reviews"]
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      let googleRatingPlaceholder = document.getElementById("google-rating-value");
+      googleRatingPlaceholder.textContent = result["rating"].toFixed(2);
 
-      let carouselData = document.getElementById('carousel-data');
+      let googleRatingsNumberPlaceholder = document.getElementById("google-ratings-number");
+      googleRatingsNumberPlaceholder.textContent = result["user_ratings_total"] + " comentarii";
+
+      const reviews = result["reviews"];
+      let carouselData = document.getElementById("carousel-data");
       for (let i = 0; i < reviews.length; i++) {
         let review = document.createElement("div");
         if (i === 0) {
@@ -132,7 +137,7 @@
 
         let starDiv = document.createElement("div");
         starDiv.setAttribute("class", "ud-testimonial-ratings mb-3 flex items-center mx-8");
-        for (let j = 1; j <= reviews[i]['rating']; j++) {
+        for (let j = 1; j <= reviews[i]["rating"]; j++) {
           let span = document.createElement("span");
           span.setAttribute("class", "mr-1 text-[#fbb040]");
           let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -152,26 +157,26 @@
         let p = document.createElement("p");
         p.setAttribute("class", "text-base tracking-wide text-white mx-8");
         p.setAttribute("style", "display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow:hidden;");
-        p.textContent = reviews[i]['text'];
+        p.textContent = reviews[i]["text"];
         textDiv.appendChild(p);
 
-        let photoDiv = document.createElement('div');
+        let photoDiv = document.createElement("div");
         photoDiv.setAttribute("class", "ud-testimonial-info flex items-center mx-8");
-        let innerPhotoDiv = document.createElement('div');
+        let innerPhotoDiv = document.createElement("div");
         innerPhotoDiv.setAttribute("class", "ud-testimonial-image mr-5 h-[50px] w-[50px] overflow-hidden rounded-full");
-        let innerImg = document.createElement('img');
-        innerImg.src = reviews[i]['profile_photo_url'];
+        let innerImg = document.createElement("img");
+        innerImg.src = reviews[i]["profile_photo_url"];
         innerImg.alt = "author";
         innerPhotoDiv.appendChild(innerImg);
-        let authorDiv = document.createElement('div');
+        let authorDiv = document.createElement("div");
         authorDiv.setAttribute("class", "ud-testimonial-meta");
-        let author = document.createElement('h4');
+        let author = document.createElement("h4");
         author.setAttribute("class", "text-sm font-semibold");
-        author.textContent = reviews[i]['author_name'];
-        let timeAgo = document.createElement('p');
+        author.textContent = reviews[i]["author_name"];
+        let timeAgo = document.createElement("p");
         timeAgo.setAttribute("class", "text-xs");
         timeAgo.setAttribute("style", "color: #bcbcbc");
-        timeAgo.textContent = reviews[i]['relative_time_description'];
+        timeAgo.textContent = reviews[i]["relative_time_description"];
         authorDiv.appendChild(author);
         authorDiv.appendChild(timeAgo);
         photoDiv.appendChild(innerPhotoDiv);
