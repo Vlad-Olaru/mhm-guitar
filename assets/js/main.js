@@ -108,7 +108,7 @@
     placeId: 'ChIJW6iKWxz_sUARzEOed2aqGQY',
     language: 'ro',
     fields: ['rating', 'reviews', 'user_ratings_total']
-  }
+  };
 
   const service = new google.maps.places.PlacesService(document.createElement("div"));
   service.getDetails(request, function(result, status) {
@@ -172,6 +172,7 @@
         authorDiv.setAttribute("class", "ud-testimonial-meta");
         let author = document.createElement("h4");
         author.setAttribute("class", "text-sm font-semibold");
+        author.setAttribute("style", "color: #bcbcbc");
         author.textContent = reviews[i]["author_name"];
         let timeAgo = document.createElement("p");
         timeAgo.setAttribute("class", "text-xs");
