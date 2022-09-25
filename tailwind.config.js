@@ -37,6 +37,7 @@ module.exports = {
         tint4: '#76a09d',
         tint5: '#76a09d',
         tint6: '#76a09d',
+        "carousel-grey": 'rgba(34,68,65,0.8)'
       },
       boxShadow: {
         input: "0px 7px 20px rgba(0, 0, 0, 0.03)",
