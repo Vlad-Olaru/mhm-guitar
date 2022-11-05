@@ -1190,16 +1190,16 @@ input:checked + .toggle-bg{
   z-index: -1;
 }
 
+.z-20{
+  z-index: 20;
+}
+
 .z-30{
   z-index: 30;
 }
 
 .z-\[999\]{
   z-index: 999;
-}
-
-.z-20{
-  z-index: 20;
 }
 
 .z-50{
@@ -1275,12 +1275,12 @@ input:checked + .toggle-bg{
   margin-top: 0.5rem;
 }
 
-.mr-1{
-  margin-right: 0.25rem;
+.mb-3{
+  margin-bottom: 0.75rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
+.mr-1{
+  margin-right: 0.25rem;
 }
 
 .mb-12{
@@ -1293,10 +1293,6 @@ input:checked + .toggle-bg{
 
 .mt-\[6px\]{
   margin-top: 6px;
-}
-
-.mb-3{
-  margin-bottom: 0.75rem;
 }
 
 .mb-1{
@@ -1355,6 +1351,10 @@ input:checked + .toggle-bg{
   height: 24rem;
 }
 
+.h-\[50px\]{
+  height: 50px;
+}
+
 .h-3{
   height: 0.75rem;
 }
@@ -1369,10 +1369,6 @@ input:checked + .toggle-bg{
 
 .h-1\/2{
   height: 50%;
-}
-
-.h-\[50px\]{
-  height: 50px;
 }
 
 .h-6{
@@ -1399,6 +1395,10 @@ input:checked + .toggle-bg{
   width: 30px;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-3{
   width: 0.75rem;
 }
@@ -1413,10 +1413,6 @@ input:checked + .toggle-bg{
 
 .w-10{
   width: 2.5rem;
-}
-
-.w-\[50px\]{
-  width: 50px;
 }
 
 .w-64{
@@ -1472,6 +1468,11 @@ input:checked + .toggle-bg{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-x-0{
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1484,11 +1485,6 @@ input:checked + .toggle-bg{
 
 .translate-x-full{
   --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-0{
-  --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1914,17 +1910,17 @@ input:checked + .toggle-bg{
   line-height: 1.75rem;
 }
 
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .text-\[35px\]{
   font-size: 35px;
 }
 
 .text-\[32px\]{
   font-size: 32px;
-}
-
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .font-bold{
@@ -2023,6 +2019,12 @@ input:checked + .toggle-bg{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-testimonial{
+  --tw-shadow: 0px 60px 120px -20px #EBEFFD;
+  --tw-shadow-colored: 0px 60px 120px -20px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -2032,12 +2034,6 @@ input:checked + .toggle-bg{
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-testimonial{
-  --tw-shadow: 0px 60px 120px -20px #EBEFFD;
-  --tw-shadow-colored: 0px 60px 120px -20px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2059,16 +2055,16 @@ input:checked + .toggle-bg{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition{
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+.transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.transition-all{
-  transition-property: all;
+.transition{
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2085,12 +2081,12 @@ input:checked + .toggle-bg{
   transition-duration: 150ms;
 }
 
-.duration-300{
-  transition-duration: 300ms;
-}
-
 .duration-700{
   transition-duration: 700ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
 }
 
 .ease-in-out{
@@ -2212,8 +2208,9 @@ body {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.hover\:bg-white\/50:hover{
-  background-color: rgb(255 255 255 / 0.5);
+.hover\:bg-secondary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(73 128 124 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-white:hover{
@@ -2234,11 +2231,6 @@ body {
 .hover\:bg-blue-800:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(30 66 159 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-secondary:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(73 128 124 / var(--tw-bg-opacity));
 }
 
 .hover\:text-blue-600:hover{
