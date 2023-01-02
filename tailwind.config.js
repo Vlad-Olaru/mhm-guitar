@@ -40,6 +40,7 @@ module.exports = {
         tint4: '#76a09d',
         tint5: '#76a09d',
         tint6: '#76a09d',
+        rating: '#4486F3',
         "carousel-grey": 'rgba(34,68,65,0.8)'
       },
       boxShadow: {
