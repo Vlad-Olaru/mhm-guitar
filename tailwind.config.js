@@ -3,6 +3,9 @@ module.exports = {
 
   theme: {
     screens: {
+      xs: "400px",
+      // => @media (min-width: 448px) { ... }
+
       sm: "540px",
       // => @media (min-width: 576px) { ... }
 
@@ -24,7 +27,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        black: "#212b36",
+        black: "#000000",
         dark: "#090E34",
         "dark-700": "#090e34b3",
         primary: "#1b605b",
