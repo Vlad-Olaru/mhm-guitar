@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /*
-! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -32,7 +32,6 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -47,8 +46,6 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
 }
 
 /*
@@ -415,12 +412,6 @@ video {
   height: auto;
 }
 
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden] {
-  display: none;
-}
-
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -476,6 +467,7 @@ select{
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
   -webkit-print-color-adjust: exact;
+     color-adjust: exact;
           print-color-adjust: exact;
 }
 
@@ -486,6 +478,7 @@ select{
   background-size: initial;
   padding-right: 0.75rem;
   -webkit-print-color-adjust: unset;
+     color-adjust: unset;
           print-color-adjust: unset;
 }
 
@@ -495,6 +488,7 @@ select{
           appearance: none;
   padding: 0;
   -webkit-print-color-adjust: exact;
+     color-adjust: exact;
           print-color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
@@ -576,6 +570,23 @@ select{
   outline: 1px auto inherit;
 }
 
+input[type=file]::-webkit-file-upload-button{
+  color: white;
+  background: #1F2937;
+  border: 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  -webkit-margin-start: -1rem;
+          margin-inline-start: -1rem;
+  -webkit-margin-end: 1rem;
+          margin-inline-end: 1rem;
+}
+
 input[type=file]::file-selector-button{
   color: white;
   background: #1F2937;
@@ -593,13 +604,26 @@ input[type=file]::file-selector-button{
           margin-inline-end: 1rem;
 }
 
+input[type=file]::-webkit-file-upload-button:hover{
+  background: #374151;
+}
+
 input[type=file]::file-selector-button:hover{
   background: #374151;
+}
+
+.dark input[type=file]::-webkit-file-upload-button{
+  color: white;
+  background: #4B5563;
 }
 
 .dark input[type=file]::file-selector-button{
   color: white;
   background: #4B5563;
+}
+
+.dark input[type=file]::-webkit-file-upload-button:hover{
+  background: #6B7280;
 }
 
 .dark input[type=file]::file-selector-button:hover{
@@ -709,7 +733,7 @@ input:checked + .toggle-bg{
 
 [data-tooltip-style^='light'] + .tooltip > .tooltip-arrow:before{
   border-style: solid;
-  border-color: #e5e7eb;
+  border-color: #E5E7EB;
 }
 
 [data-tooltip-style^='light'] + .tooltip[data-popper-placement^='top'] > .tooltip-arrow:before{
@@ -781,22 +805,22 @@ input:checked + .toggle-bg{
 
 [role="tooltip"] > [data-popper-arrow]:before{
   border-style: solid;
-  border-color: #e5e7eb;
+  border-color: #E5E7EB;
 }
 
 .dark [role="tooltip"] > [data-popper-arrow]:before{
   border-style: solid;
-  border-color: #4b5563;
+  border-color: #4B5563;
 }
 
 [role="tooltip"] > [data-popper-arrow]:after{
   border-style: solid;
-  border-color: #e5e7eb;
+  border-color: #E5E7EB;
 }
 
 .dark [role="tooltip"] > [data-popper-arrow]:after{
   border-style: solid;
-  border-color: #4b5563;
+  border-color: #4B5563;
 }
 
 [data-popover][role="tooltip"][data-popper-placement^='top'] > [data-popper-arrow]:before{
@@ -864,6 +888,53 @@ input:checked + .toggle-bg{
 }
 
 *, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(63 131 248 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::-webkit-backdrop{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -1021,10 +1092,6 @@ input:checked + .toggle-bg{
   visibility: hidden;
 }
 
-.collapse{
-  visibility: collapse;
-}
-
 .static{
   position: static;
 }
@@ -1042,6 +1109,7 @@ input:checked + .toggle-bg{
 }
 
 .sticky{
+  position: -webkit-sticky;
   position: sticky;
 }
 
@@ -1342,6 +1410,10 @@ input:checked + .toggle-bg{
   width: 3120px;
 }
 
+.w-\[2950px\]{
+  width: 2950px;
+}
+
 .w-\[5500px\]{
   width: 5500px;
 }
@@ -1376,30 +1448,6 @@ input:checked + .toggle-bg{
 
 .w-4{
   width: 1rem;
-}
-
-.w-\[3000px\]{
-  width: 3000px;
-}
-
-.w-\[2800px\]{
-  width: 2800px;
-}
-
-.w-\[2900px\]{
-  width: 2900px;
-}
-
-.w-\[2920px\]{
-  width: 2920px;
-}
-
-.w-\[2940px\]{
-  width: 2940px;
-}
-
-.w-\[2950px\]{
-  width: 2950px;
 }
 
 .max-w-full{
@@ -1669,16 +1717,6 @@ input:checked + .toggle-bg{
   border-color: rgb(26 86 219 / var(--tw-border-opacity));
 }
 
-.border-black{
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.border-dark{
-  --tw-border-opacity: 1;
-  border-color: rgb(9 14 52 / var(--tw-border-opacity));
-}
-
 .bg-transparent{
   background-color: transparent;
 }
@@ -1819,6 +1857,11 @@ input:checked + .toggle-bg{
   padding-right: 2rem;
 }
 
+.px-\[5px\]{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1864,36 +1907,6 @@ input:checked + .toggle-bg{
   padding-bottom: 0.625rem;
 }
 
-.px-1{
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.px-\[2px\]{
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-.px-\[5px\]{
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.px-\[px\]{
-  padding-left: px;
-  padding-right: px;
-}
-
-.px-\[4px\]{
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-.px-\[6px\]{
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
 .pt-\[80px\]{
   padding-top: 80px;
 }
@@ -1906,12 +1919,12 @@ input:checked + .toggle-bg{
   padding-bottom: 2rem;
 }
 
-.pb-20{
-  padding-bottom: 5rem;
+.pt-20{
+  padding-top: 5rem;
 }
 
-.pt-6{
-  padding-top: 1.5rem;
+.pb-20{
+  padding-bottom: 5rem;
 }
 
 .pt-2{
@@ -1922,8 +1935,8 @@ input:checked + .toggle-bg{
   padding-bottom: 0.5rem;
 }
 
-.pt-20{
-  padding-top: 5rem;
+.pb-12{
+  padding-bottom: 3rem;
 }
 
 .pb-10{
@@ -1940,18 +1953,6 @@ input:checked + .toggle-bg{
 
 .pb-5{
   padding-bottom: 1.25rem;
-}
-
-.pb-16{
-  padding-bottom: 4rem;
-}
-
-.pb-12{
-  padding-bottom: 3rem;
-}
-
-.pt-12{
-  padding-top: 3rem;
 }
 
 .text-left{
@@ -2098,15 +2099,15 @@ input:checked + .toggle-bg{
   opacity: 1;
 }
 
-.shadow-testimonial{
-  --tw-shadow: 0px 60px 120px -20px #EBEFFD;
-  --tw-shadow-colored: 0px 60px 120px -20px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-testimonial{
+  --tw-shadow: 0px 60px 120px -20px #EBEFFD;
+  --tw-shadow-colored: 0px 60px 120px -20px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2152,9 +2153,9 @@ input:checked + .toggle-bg{
 }
 
 .transition{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2196,9 +2197,9 @@ body {
   z-index: 9999;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.8;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   -webkit-backdrop-filter: blur(5px);
@@ -2293,6 +2294,79 @@ body {
   }
 }
 
+.cls-1 {
+  fill: #cacaca;
+}
+
+.cls-2 {
+  fill: #4a4a4a;
+}
+
+.cls-3 {
+  fill: #151515;
+}
+
+.cls-4 {
+  fill: #c8c8c8;
+}
+
+.cls-5 {
+  fill: #474747;
+}
+
+.cls-6 {
+  fill: #dfdfdf;
+}
+
+.cls-7 {
+  fill: #1f1f1f;
+}
+
+.cls-8 {
+  fill: #e2e2e2;
+}
+
+.cls-9 {
+  fill: #c7c7c7;
+}
+
+.cls-10 {
+  fill: #2c2c2c;
+}
+
+.cls-11 {
+  fill: #d3d3d3;
+}
+
+.cls-12 {
+  fill: #dbdbdb;
+}
+
+.cls-13 {
+  fill: #303030;
+}
+
+.cls-14 {
+  fill: #656565;
+}
+
+.cls-15 {
+  fill: #141414;
+}
+
+.cls-16 {
+  fill: #ccc;
+}
+
+.cls-17 {
+  fill: #dfdfdf;
+}
+
+.cls-18 {
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
 .hover\:border-gray-300:hover{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -2339,7 +2413,8 @@ body {
 }
 
 .hover\:underline:hover{
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .hover\:shadow-md:hover{
@@ -2544,10 +2619,6 @@ body {
     padding-right: 2.5rem;
   }
 
-  .sm\:pt-14{
-    padding-top: 3.5rem;
-  }
-
   .sm\:text-3xl{
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2685,38 +2756,6 @@ body {
     margin-bottom: 0px;
   }
 
-  .lg\:ml-10{
-    margin-left: 2.5rem;
-  }
-
-  .lg\:ml-8{
-    margin-left: 2rem;
-  }
-
-  .lg\:ml-\[16px\]{
-    margin-left: 16px;
-  }
-
-  .lg\:ml-\[20px\]{
-    margin-left: 20px;
-  }
-
-  .lg\:ml-\[36px\]{
-    margin-left: 36px;
-  }
-
-  .lg\:ml-\[40px\]{
-    margin-left: 40px;
-  }
-
-  .lg\:ml-\[34px\]{
-    margin-left: 34px;
-  }
-
-  .lg\:ml-\[32px\]{
-    margin-left: 32px;
-  }
-
   .lg\:block{
     display: block;
   }
@@ -2817,16 +2856,6 @@ body {
     padding-right: 2.5rem;
   }
 
-  .lg\:px-12{
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .lg\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .lg\:pt-\[100px\]{
     padding-top: 100px;
   }
@@ -2835,32 +2864,12 @@ body {
     padding-bottom: 70px;
   }
 
-  .lg\:pb-\[120px\]{
-    padding-bottom: 120px;
-  }
-
   .lg\:pt-\[120px\]{
     padding-top: 120px;
   }
 
-  .lg\:pb-12{
-    padding-bottom: 3rem;
-  }
-
-  .lg\:pt-20{
-    padding-top: 5rem;
-  }
-
-  .lg\:pb-20{
-    padding-bottom: 5rem;
-  }
-
-  .lg\:pt-24{
-    padding-top: 6rem;
-  }
-
-  .lg\:pb-24{
-    padding-bottom: 6rem;
+  .lg\:pb-\[120px\]{
+    padding-bottom: 120px;
   }
 
   .lg\:text-4xl{
