@@ -1162,11 +1162,6 @@ input:checked + .toggle-bg{
   margin-right: 0.5rem;
 }
 
-.mx-10{
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -1227,16 +1222,16 @@ input:checked + .toggle-bg{
   margin-left: -4rem;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-6{
   margin-top: 1.5rem;
 }
 
 .mr-1{
   margin-right: 0.25rem;
-}
-
-.mt-4{
-  margin-top: 1rem;
 }
 
 .-mr-5{
@@ -1255,8 +1250,16 @@ input:checked + .toggle-bg{
   margin-right: 0.5rem;
 }
 
+.mr-\[30px\]{
+  margin-right: 30px;
+}
+
 .mt-\[2px\]{
   margin-top: 2px;
+}
+
+.mr-6{
+  margin-right: 1.5rem;
 }
 
 .-mr-3{
@@ -1269,22 +1272,6 @@ input:checked + .toggle-bg{
 
 .mt-2{
   margin-top: 0.5rem;
-}
-
-.mr-6{
-  margin-right: 1.5rem;
-}
-
-.mr-\[100px\]{
-  margin-right: 100px;
-}
-
-.mr-\[40px\]{
-  margin-right: 40px;
-}
-
-.mr-\[30px\]{
-  margin-right: 30px;
 }
 
 .block{
@@ -1459,56 +1446,16 @@ input:checked + .toggle-bg{
   max-width: 40px;
 }
 
+.max-w-\[196px\]{
+  max-width: 196px;
+}
+
 .max-w-\[800px\]{
   max-width: 800px;
 }
 
 .max-w-\[590px\]{
   max-width: 590px;
-}
-
-.max-w-\[20px\]{
-  max-width: 20px;
-}
-
-.max-w-\[30px\]{
-  max-width: 30px;
-}
-
-.max-w-\[100px\]{
-  max-width: 100px;
-}
-
-.max-w-\[120px\]{
-  max-width: 120px;
-}
-
-.max-w-\[400px\]{
-  max-width: 400px;
-}
-
-.max-w-\[300px\]{
-  max-width: 300px;
-}
-
-.max-w-\[200px\]{
-  max-width: 200px;
-}
-
-.max-w-\[210px\]{
-  max-width: 210px;
-}
-
-.max-w-\[180px\]{
-  max-width: 180px;
-}
-
-.max-w-\[190px\]{
-  max-width: 190px;
-}
-
-.max-w-\[196px\]{
-  max-width: 196px;
 }
 
 .flex-1{
@@ -2003,10 +1950,6 @@ input:checked + .toggle-bg{
 
 .pb-5{
   padding-bottom: 1.25rem;
-}
-
-.pt-3{
-  padding-top: 0.75rem;
 }
 
 .text-left{
@@ -2649,84 +2592,8 @@ body {
 }
 
 @media (min-width: 400px){
-  .xs\:mr-4{
-    margin-right: 1rem;
-  }
-
-  .xs\:mr-8{
-    margin-right: 2rem;
-  }
-
-  .xs\:mr-7{
-    margin-right: 1.75rem;
-  }
-
-  .xs\:mr-\[px10\]{
-    margin-right: px10;
-  }
-
-  .xs\:mr-\[px20\]{
-    margin-right: px20;
-  }
-
-  .xs\:mr-\[20px\]{
-    margin-right: 20px;
-  }
-
-  .xs\:mr-\[26px\]{
-    margin-right: 26px;
-  }
-
-  .xs\:mr-\[39px\]{
-    margin-right: 39px;
-  }
-
-  .xs\:mr-\[30px\]{
-    margin-right: 30px;
-  }
-
-  .xs\:mr-\[32px\]{
-    margin-right: 32px;
-  }
-
-  .xs\:mr-\[50px\]{
-    margin-right: 50px;
-  }
-
-  .xs\:mr-\[100px\]{
-    margin-right: 100px;
-  }
-
   .xs\:max-w-\[300px\]{
     max-width: 300px;
-  }
-
-  .xs\:pt-4{
-    padding-top: 1rem;
-  }
-
-  .xs\:pt-3{
-    padding-top: 0.75rem;
-  }
-
-  .xs\:pt-\[10px\]{
-    padding-top: 10px;
-  }
-
-  .xs\:pt-\[12px\]{
-    padding-top: 12px;
-  }
-
-  .xs\:pt-\[20px\]{
-    padding-top: 20px;
-  }
-
-  .xs\:pt-\[18px\]{
-    padding-top: 18px;
-  }
-
-  .xs\:pt-\[16px\]{
-    padding-top: 16px;
   }
 
   .xs\:pt-\[14px\]{
@@ -2774,10 +2641,6 @@ body {
 
   .sm\:w-6{
     width: 1.5rem;
-  }
-
-  .sm\:max-w-\[300px\]{
-    max-width: 300px;
   }
 
   .sm\:p-8{
@@ -2851,14 +2714,6 @@ body {
 
   .md\:-ml-5{
     margin-left: -1.25rem;
-  }
-
-  .md\:-mr-10{
-    margin-right: -2.5rem;
-  }
-
-  .md\:ml-10{
-    margin-left: 2.5rem;
   }
 
   .md\:mr-0{
@@ -2957,10 +2812,6 @@ body {
 
   .lg\:-mt-\[50px\]{
     margin-top: -50px;
-  }
-
-  .lg\:mr-6{
-    margin-right: 1.5rem;
   }
 
   .lg\:block{
