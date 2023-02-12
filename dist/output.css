@@ -1266,6 +1266,10 @@ input:checked + .toggle-bg{
   margin-right: -0.75rem;
 }
 
+.ml-\[80px\]{
+  margin-left: 80px;
+}
+
 .mt-\[6px\]{
   margin-top: 6px;
 }
