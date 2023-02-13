@@ -158,3 +158,19 @@ body {
 .cls-34 {
   fill: #35a854;
 }
+
+.signup-form {
+  display:inline-block;
+  text-decoration:none;
+  background-color:#1b605b;
+  color:#ffffff;
+  font-family:Inter, sans-serif;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  padding:11px 25px;
+  font-size:14px;
+  line-height:200%;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
